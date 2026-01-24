@@ -40,7 +40,7 @@ Address
 
 Images
 
-🔍 Search & Browse
+ Search & Browse
 
 Search by keyword or location
 
@@ -171,7 +171,7 @@ Images
 
 Inquiries
 
-🚀 Deployment
+ Deployment
 
 This project is production-ready and configured for Render deployment using:
 
@@ -226,6 +226,6 @@ Map-based search
 This project is for educational and MVP purposes.
 You may adapt or extend it as needed.
 
-👨‍💻 Author
+ Author
 
-Built with ❤️ as a full-stack Django marketplace project.
+Built with  as a full-stack Django marketplace project.
