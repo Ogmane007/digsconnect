@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="mb-3">Available Properties</h2>
+
+<form method="get" action="{% url 'search' %}" class="row g-2 mb-4">
+    <div class="col-md-4">
+        <input class="form-control" type="text" name="q" placeholder="Search area or keyword">
+    </div>
+    <div class="col-md-2">
+        <input class="form-control" type="text" name="min_price" placeholder="Min price">
+    </div>
+    <div class="col-md-2">
+        <input class="form-control" type="text" name="max_price" placeholder="Max price">
+    </div>
+    <div class="col-md-2">
+        <select class="form-select" name="sort">
+            <option value="newest">Newest</option>
+            <option value="price_asc">Price: Low to High</option>
+            <option value="price_desc">Price: High to Low</option>
+        </select>
+    </div>
+    <div class="col-md-2">
+        <button class="btn btn-primary w-100">Search</button>
+    </div>
+</form>
+
+<div class="row">
+    {% for property in properties %}
+        <div class="col-md-4 mb-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">{{ property.title }}</h5>
+                    <p class="card-text">{{ property.address }}</p>
+                    <strong>R{{ property.price }}</strong>
+                </div>
+            </div>
+        </div>
+    {% empty %}
+        <p>No properties available.</p>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Add Images for "{{ property.title }}"</h2>
+
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <input type="file" name="images" multiple class="form-control mb-3">
+  <button class="btn btn-primary">Upload Images</button>
+</form>
+
+<a class="btn btn-outline-secondary mt-3" href="{% url 'dashboard' %}">
+  Back to Dashboard
+</a>
+
+{% endblock %}

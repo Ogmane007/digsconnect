@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Inquiries</h2>
+
+{% if inquiries %}
+  <div class="list-group">
+    {% for inquiry in inquiries %}
+      <div class="list-group-item">
+        <h5 class="mb-1">{{ inquiry.property.title }}</h5>
+        <p class="mb-1"><strong>From:</strong> {{ inquiry.student.username }}</p>
+        <p class="mb-1">{{ inquiry.message }}</p>
+        <small class="text-muted">{{ inquiry.created_at }}</small>
+      </div>
+    {% endfor %}
+  </div>
+{% else %}
+  <p>No inquiries yet.</p>
+{% endif %}
+{% endblock %}
